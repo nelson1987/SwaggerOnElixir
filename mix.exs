@@ -40,7 +40,7 @@ defmodule RockSchool.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
-      {:jason, "~> 1.2"},
+      {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.5"},
       {:phoenix_swagger, "~> 0.8"},
       {:ex_json_schema, "~> 0.5"},

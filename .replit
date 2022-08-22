@@ -1,6 +1,6 @@
 run = ["iex", "-S", "mix", "phx.server"]
 
-entrypoint = "lib/phoenix_app_web/controllers/page_controller.ex"
+entrypoint = "rock_school/lib/rock_school_web/controllers/Contacontroller.ex"
 
 hidden = [".mix", ".hex", ".elixir_ls"]
 
