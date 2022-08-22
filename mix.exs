@@ -35,7 +35,7 @@ defmodule RockSchool.MixProject do
     [
       {:phoenix, "~> 1.6.11"},
       {:phoenix_live_dashboard, "~> 0.6"},
-      {:esbuild, "~> 0.14.41", runtime: Mix.env() == :dev},
+      {:esbuild, "~> 0.4", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
