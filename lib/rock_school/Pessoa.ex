@@ -7,5 +7,6 @@ defmodule RockSchool.Pessoa do
     {:error, "Error while creating person"}
   end
 
-  def create(message) when message != "success" or message != "error",  do: {:error, "Error while creating person"}
+  def create(message) when message != "success" or message != "error",
+    do: {:error, "Error while creating person"}
 end

@@ -92,38 +92,13 @@
         "operationId": "RockSchoolWeb.PessoaController.buscarPessoa",
         "parameters": [
           {
-            "description": "User ID",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "integer",
-            "x-example": 3
-          },
-          {
-            "description": "The property to sort by",
-            "in": "query",
-            "name": "sort_by",
+            "description": "user Request",
+            "in": "body",
+            "name": "user",
             "required": false,
-            "type": "string"
-          },
-          {
-            "default": "asc",
-            "description": "The sort direction",
-            "enum": [
-              "asc",
-              "desc"
-            ],
-            "in": "query",
-            "name": "sort_direction",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "description": "The company id",
-            "in": "string",
-            "name": "company_id",
-            "required": false,
-            "type": "query"
+            "schema": {
+              "$ref": "#/definitions/UserRequest"
+            }
           }
         ],
         "responses": {
@@ -142,27 +117,19 @@
     },
     "/api/v1/conta": {
       "get": {
-        "description": "Descrição",
+        "description": "Aqui só retornaremos o valor da conta do Batman",
         "operationId": "RockSchoolWeb.ContaController.buscarConta",
         "parameters": [
           {
-            "description": "Query String Obrigatória",
-            "in": "id",
+            "description": "[Success, Error, '']",
+            "in": "success",
             "name": "query",
             "required": true,
-            "type": "integer"
-          },
-          {
-            "description": "Path",
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "integer",
-            "x-example": 3
+            "type": "string"
           }
         ],
         "responses": {},
-        "summary": "Sumário",
+        "summary": "Buscar Conta do Batman",
         "tags": [
           "Conta"
         ]

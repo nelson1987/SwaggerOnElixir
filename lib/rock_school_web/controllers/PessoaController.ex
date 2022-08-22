@@ -9,40 +9,7 @@ defmodule RockSchoolWeb.PessoaController do
     post("/api/v1/Pessoa")
     description("List all users in the database")
     response(200, "OK", Schema.ref(:UsersResponse))
-    # parameter(:body,  Schema.ref(:User), "The users details")
-    # parameter(:query, :id, :integer, "account id", required: true)
-    parameter(:id, :path, :integer, "User ID", required: true, example: 3)
-
-    parameters do
-      sort_by(:query, :string, "The property to sort by")
-      sort_direction(:query, :string, "The sort direction", enum: [:asc, :desc], default: :asc)
-      company_id(:string, :query, "The company id")
-    end
-
-    # produces("application/json")
-    # deprecated(false)
-    # response(code(:ok), "Sucesso")
-    # response(code(:error), "Erro")
-    # response(200, "OK", Schema.ref(:UsersResponse),
-    #   example: %{
-    #     data: [
-    #       %{
-    #         id: 1,
-    #         name: "Joe",
-    #         email: "Joe6@mail.com",
-    #         inserted_at: "2017-02-08T12:34:55Z",
-    #         updated_at: "2017-02-12T13:45:23Z"
-    #       },
-    #       %{
-    #         id: 2,
-    #         name: "Jack",
-    #         email: "Jack7@mail.com",
-    #         inserted_at: "2017-02-04T11:24:45Z",
-    #         updated_at: "2017-02-15T23:15:43Z"
-    #       }
-    #     ]
-    #   }
-    # )
+    parameter(:user, :body, Schema.ref(:UserRequest), "user Request")
   end
 
   def swagger_definitions do
