@@ -4,17 +4,19 @@ defmodule RockSchoolWeb.PessoaController do
   alias RockSchool.Pessoa
 
   use PhoenixSwagger
+
   swagger_path(:buscarPessoa) do
-    get("/api/v1/Pessoa")
+    post("/api/v1/Pessoa")
     description("List all users in the database")
     response(200, "OK", Schema.ref(:UsersResponse))
     # parameter(:body,  Schema.ref(:User), "The users details")
     # parameter(:query, :id, :integer, "account id", required: true)
     parameter(:id, :path, :integer, "User ID", required: true, example: 3)
+
     parameters do
-      sort_by :query, :string, "The property to sort by"
-      sort_direction :query, :string, "The sort direction", enum: [:asc, :desc], default: :asc
-      company_id :string, :query, "The company id"
+      sort_by(:query, :string, "The property to sort by")
+      sort_direction(:query, :string, "The sort direction", enum: [:asc, :desc], default: :asc)
+      company_id(:string, :query, "The company id")
     end
 
     # produces("application/json")
@@ -42,6 +44,7 @@ defmodule RockSchoolWeb.PessoaController do
     #   }
     # )
   end
+
   def swagger_definitions do
     %{
       User:
@@ -101,5 +104,4 @@ defmodule RockSchoolWeb.PessoaController do
     |> put_status(:not_found)
     |> json(%{message: message})
   end
-
 end

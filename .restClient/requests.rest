@@ -1,0 +1,40 @@
+# @name Pessoa200 
+POST http://localhost:4000/api/v1/pessoa
+Content-Type: application/json
+
+{
+"success" : "success"
+}
+###
+# @name Pessoa404 
+POST http://localhost:4000/api/v1/pessoa
+Content-Type: application/json
+
+{
+"success" : "ok"
+}
+###
+# @name Pessoa404 
+POST http://localhost:4000/api/v1/pessoa
+Content-Type: application/json
+
+{
+"error" : "error"
+}
+###
+###
+# @name ContaOK 
+GET http://localhost:4000/api/v1/conta?success=ok 
+Content-Type: application/json
+### 
+# @name ContaError 
+GET http://localhost:4000/api/v1/conta?success=error 
+Content-Type: application/json
+
+### GET /api/pessoa ProjetoWeb.PessoaController :buscarPessoa 
+# POST /api/conta ProjetoWeb.ContaController :buscarConta * 
+# /api/swagger PhoenixSwagger.Plug.SwaggerUI [otp_app: :projeto, swagger_file: "swagger.json"] * 
+# /dev/mailbox Plug.Swoosh.MailboxPreview [] GET /dashboard Phoenix.LiveDashboard.PageLive :home 
+# GET /dashboard/:page Phoenix.LiveDashboard.PageLive :page 
+# GET /dashboard/:node/:page Phoenix.LiveDashboard.PageLive :page WS /live/websocket Phoenix.LiveView.Socket 
+# GET /live/longpoll Phoenix.LiveView.Socket POST /live/longpoll Phoenix.LiveView.Socket

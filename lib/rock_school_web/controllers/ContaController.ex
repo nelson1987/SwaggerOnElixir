@@ -4,6 +4,7 @@ defmodule RockSchoolWeb.ContaController do
   alias RockSchool.Conta
 
   use PhoenixSwagger
+
   swagger_path(:buscarConta) do
     get("/api/v1/conta")
     summary("Sumário")
@@ -21,6 +22,7 @@ defmodule RockSchoolWeb.ContaController do
     #   company_id :string, :query, "The company id"
     # end
   end
+
   def buscarConta(conn, %{"success" => success}) do
     objeto = %{foo: "bar"}
     IO.inspect(objeto.foo)
@@ -28,6 +30,7 @@ defmodule RockSchoolWeb.ContaController do
     success
     |> Conta.create()
     |> handle_response(conn)
+
     # |> IO.inspect(label: "[Termino] [GET]/conta :::")
   end
 
@@ -42,5 +45,4 @@ defmodule RockSchoolWeb.ContaController do
     |> put_status(:not_found)
     |> json(%{message: message})
   end
-
 end

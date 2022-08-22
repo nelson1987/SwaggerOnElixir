@@ -13,7 +13,9 @@ defmodule RockSchoolWeb.Router do
   end
 
   scope "/api/swagger" do
-    forward "/", PhoenixSwagger.Plug.SwaggerUI, otp_app: :rock_school, swagger_file: "swagger.json"
+    forward "/", PhoenixSwagger.Plug.SwaggerUI,
+      otp_app: :rock_school,
+      swagger_file: "swagger.json"
   end
 
   def swagger_info do
@@ -22,12 +24,13 @@ defmodule RockSchoolWeb.Router do
       info: %{
         version: "1.0",
         title: "Minha Primeira Api no Swagger usando Elixir.",
-        description: "API feita em Elixir com Swagger",
+        description: "API feita em Elixir com Swagger"
       },
       consumes: ["application/json"],
       produces: ["application/json"]
     }
   end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put

@@ -8,8 +8,7 @@ config :rock_school, RockSchoolWeb.Endpoint,
   server: false
 
 # In test we don't send emails.
-config :rock_school, RockSchool.Mailer,
-  adapter: Swoosh.Adapters.Test
+config :rock_school, RockSchool.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn
