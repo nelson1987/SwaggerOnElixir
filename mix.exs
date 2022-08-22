@@ -57,7 +57,7 @@ defmodule RockSchool.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["esbuild --no-runtime-config default default --minify", "phx.digest"]
     ]
   end
 end
