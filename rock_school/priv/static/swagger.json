@@ -86,7 +86,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Pessoa": {
+    "/api/v1/Pessoa": {
       "get": {
         "description": "List all users in the database",
         "operationId": "RockSchoolWeb.PessoaController.buscarPessoa",
@@ -140,7 +140,7 @@
         ]
       }
     },
-    "/api/conta": {
+    "/api/v1/conta": {
       "get": {
         "description": "Descrição",
         "operationId": "RockSchoolWeb.ContaController.buscarConta",

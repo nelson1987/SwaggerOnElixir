@@ -8,8 +8,8 @@ defmodule RockSchoolWeb.Router do
   scope "/api", RockSchoolWeb do
     pipe_through :api
 
-    post "/pessoa", PessoaController, :buscarPessoa
-    get "/conta", ContaController, :buscarConta
+    post "/v1/pessoa", PessoaController, :buscarPessoa
+    get "/v1/conta", ContaController, :buscarConta
   end
 
   scope "/api/swagger" do

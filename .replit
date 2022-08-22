@@ -1,13 +1,19 @@
-hidden = [".iex.exs"]
-entrypoint = "README.md"
+run = ["iex", "-S", "mix", "phx.server"]
 
-[interpreter]
-command = ["iex"]
+entrypoint = "lib/phoenix_app_web/controllers/page_controller.ex"
+
+hidden = [".mix", ".hex", ".elixir_ls"]
+
+[nix]
+channel = "stable-21_11"
+
+[languages.elixir]
+pattern = "**/{*.exs,*.ex}"
+
+[languages.elixir.languageServer]
+start = ["elixir-ls"]
 
 [env]
 LC_ALL = "en_US.UTF-8"
 HEX_HOME = "/home/runner/${REPL_SLUG}/.hex"
 MIX_HOME = "/home/runner/${REPL_SLUG}/.mix"
-
-[nix]
-channel = "stable-21_11"

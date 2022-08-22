@@ -5,7 +5,7 @@ defmodule RockSchoolWeb.ContaController do
 
   use PhoenixSwagger
   swagger_path(:buscarConta) do
-    get("/api/conta")
+    get("/api/v1/conta")
     summary("Sumário")
     description("Descrição")
     parameter(:query, :id, :integer, "Query String Obrigatória", required: true)

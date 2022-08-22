@@ -5,7 +5,7 @@ defmodule RockSchoolWeb.PessoaController do
 
   use PhoenixSwagger
   swagger_path(:buscarPessoa) do
-    get("/api/Pessoa")
+    get("/api/v1/Pessoa")
     description("List all users in the database")
     response(200, "OK", Schema.ref(:UsersResponse))
     # parameter(:body,  Schema.ref(:User), "The users details")
