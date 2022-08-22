@@ -87,7 +87,7 @@
   },
   "paths": {
     "/api/v1/Pessoa": {
-      "get": {
+      "post": {
         "description": "List all users in the database",
         "operationId": "RockSchoolWeb.PessoaController.buscarPessoa",
         "parameters": [
