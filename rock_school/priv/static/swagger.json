@@ -1,0 +1,182 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "definitions": {
+    "User": {
+      "description": "A user of the app",
+      "example": {
+        "email": "joe@gmail.com",
+        "id": 123,
+        "name": "Joe"
+      },
+      "properties": {
+        "email": {
+          "description": "Email address",
+          "format": "email",
+          "type": "string"
+        },
+        "id": {
+          "description": "User ID",
+          "type": "integer"
+        },
+        "inserted_at": {
+          "description": "Creation timestamp",
+          "format": "datetime",
+          "type": "string"
+        },
+        "name": {
+          "description": "User name",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "Update timestamp",
+          "format": "datetime",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "name"
+      ],
+      "title": "Pessoa",
+      "type": "object"
+    },
+    "UserRequest": {
+      "description": "POST body for creating a user",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/User",
+          "description": "The user details"
+        }
+      },
+      "title": "UserRequest",
+      "type": "object"
+    },
+    "UserResponse": {
+      "description": "Response schema for single user",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/User",
+          "description": "The user details"
+        }
+      },
+      "title": "UserResponse",
+      "type": "object"
+    },
+    "UsersResponse": {
+      "description": "Response schema for multiple users",
+      "properties": {
+        "data": {
+          "description": "The users details",
+          "items": {
+            "$ref": "#/definitions/User"
+          },
+          "type": "array"
+        }
+      },
+      "title": "UsersReponse",
+      "type": "object"
+    }
+  },
+  "host": "localhost:4000",
+  "info": {
+    "description": "API feita em Elixir com Swagger",
+    "title": "Minha Primeira Api no Swagger usando Elixir.",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Pessoa": {
+      "get": {
+        "description": "List all users in the database",
+        "operationId": "RockSchoolWeb.PessoaController.buscarPessoa",
+        "parameters": [
+          {
+            "description": "User ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "x-example": 3
+          },
+          {
+            "description": "The property to sort by",
+            "in": "query",
+            "name": "sort_by",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "default": "asc",
+            "description": "The sort direction",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "in": "query",
+            "name": "sort_direction",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "The company id",
+            "in": "string",
+            "name": "company_id",
+            "required": false,
+            "type": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UsersResponse"
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pessoa"
+        ]
+      }
+    },
+    "/api/conta": {
+      "get": {
+        "description": "Descrição",
+        "operationId": "RockSchoolWeb.ContaController.buscarConta",
+        "parameters": [
+          {
+            "description": "Query String Obrigatória",
+            "in": "id",
+            "name": "query",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "Path",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "x-example": 3
+          }
+        ],
+        "responses": {},
+        "summary": "Sumário",
+        "tags": [
+          "Conta"
+        ]
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https",
+    "ws",
+    "wss"
+  ],
+  "swagger": "2.0"
+}
