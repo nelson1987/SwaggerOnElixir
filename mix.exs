@@ -43,7 +43,10 @@ defmodule RockSchool.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:phoenix_swagger, "~> 0.8"},
       {:ex_json_schema, "~> 0.5"},
-      {:hackney, "~> 1.9"}
+      {:hackney, "~> 1.9"},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:ecto_sql, "~> 3.0"},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 

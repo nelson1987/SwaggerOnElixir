@@ -7,6 +7,9 @@
 # General application configuration
 import Config
 
+config :rock_school,
+  ecto_repos: [RockSchool.Repo]
+
 # Configures the endpoint
 config :rock_school, RockSchoolWeb.Endpoint,
   url: [host: "localhost"],

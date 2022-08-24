@@ -8,6 +8,7 @@ defmodule RockSchool.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      RockSchool.Repo,
       # Start the Telemetry supervisor
       RockSchoolWeb.Telemetry,
       # Start the PubSub system
